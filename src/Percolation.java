@@ -20,6 +20,10 @@ public class Percolation {
     * */
     private WeightedQuickUnionUF backwash;  //考虑有backwash情况
     public Percolation(int N){
+        if (N <= 0)
+        {
+            throw new IllegalArgumentException("N is out of bound");
+        }
         rowNum = N;
         colNum = N;
         grid = new boolean[N*N];
@@ -30,6 +34,14 @@ public class Percolation {
             grid[i] = false;
         }
     }               // create N-by-N grid, with all sites blocked
+
+    public void reset(){
+        grid = null;
+        rowNum = 0;
+        colNum = 0;
+        ufs = null;
+        backwash = null;
+    }   //重置函数
 
     /*
     * 判断grid[i][j]是否合法
@@ -105,7 +117,7 @@ public class Percolation {
     public boolean percolates(){
         return ufs.connected(0,rowNum*colNum+1);
     }             // does the system percolate?
-    public static void main(String[] args){
+//    public static void main(String[] args){
         //int N = 4;
         //System.out.print(N);
         //Percolation test = new Percolation(N);
@@ -116,6 +128,6 @@ public class Percolation {
         //test.open(3,3);
         //test.open(4,3);
         //System.out.print(test.percolates());
-    }      // test client (optional)
+//    }      // test client (optional)
 
 }
