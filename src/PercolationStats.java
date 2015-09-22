@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdStats;
 import static java.lang.Math.random;
 
 public class PercolationStats {
-    private Percolation experiment;
+    //private Percolation experiment;
     private int times;  //实验次数
     private double[] threshold;   //实验结果,放在double数组里
     public PercolationStats(int N, int T){
@@ -17,7 +17,7 @@ public class PercolationStats {
         threshold = new double[times];
         int count =0;
         for (int i = 0; i < times; i++){
-            experiment = new Percolation(N);
+            Percolation experiment = new Percolation(N);
             while(!experiment.percolates())
             {
                 int x = (int)(random()*N) + 1;

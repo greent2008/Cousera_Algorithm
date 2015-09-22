@@ -34,7 +34,7 @@ public class Percolation {
             grid[i] = false;
         }
     }               // create N-by-N grid, with all sites blocked
-    
+
     /*
     * 判断grid[i][j]是否合法
     * */
