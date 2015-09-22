@@ -30,7 +30,6 @@ public class PercolationStats {
             }
             threshold[i] = (double)count / (double)(N*N);
             count = 0;
-            experiment.reset();
         }
 
     }     // perform T independent experiments on an N-by-N grid

@@ -34,19 +34,11 @@ public class Percolation {
             grid[i] = false;
         }
     }               // create N-by-N grid, with all sites blocked
-
-    public void reset(){
-        grid = null;
-        rowNum = 0;
-        colNum = 0;
-        ufs = null;
-        backwash = null;
-    }   //重置函数
-
+    
     /*
     * 判断grid[i][j]是否合法
     * */
-    public void validate(int i, int j){
+    private void validate(int i, int j){
         if (i < 1 || i > rowNum)
         {
             throw new IndexOutOfBoundsException("row index i out of Bounds");
@@ -59,7 +51,7 @@ public class Percolation {
     /*
     * 当open一个格子时
     * 检查它的四周的格子是否open*/
-    public void check(int i, int j){
+    private void check(int i, int j){
         int index = (i-1)*rowNum + j;
         if (rowNum == 1)
         {
